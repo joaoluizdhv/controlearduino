@@ -3,9 +3,11 @@
 from evdev import UInput, ecodes as e
 from time import sleep
 from escolherPorta import escolherPorta
+from lerComando import lerComando
+#Módulos de programas
 from amarok import amarok
 from vlc import vlc
-from lerComando import lerComando
+from apresentacao import apresentacao
  
 #porta = '/dev/ttyACM1'
 
@@ -36,6 +38,7 @@ def cadastrarTeclas(porta):
                         dic = vlc(porta)
                 elif opcao == "3":
                         print ("\nApresentação\n")
+                        dic = apresentacao(porta)
                 else:
                         print("Opcao invalida\n")       
         return dic
@@ -45,7 +48,7 @@ if __name__ == "__main__":
         print("Programa desenvolvido por João Luiz D. H. Valença")
         print("Estudante da Universidade Federal de Pernambuco(UFPE)")
         print("Licenca GPL v2\n")
-        sleep(3)
+        sleep(2)
         porta = escolherPorta()
         if(porta != None):
                 dic = cadastrarTeclas(porta)
