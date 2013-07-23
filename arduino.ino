@@ -9,9 +9,8 @@ void setup()
   Serial.begin(9600);
   irrecv.enableIRIn(); // Start the receiver
 }
- 
-//cadastrar o botao player que desligará a lampada
-void cadastrarTecla()
+
+void lerTecla()
 {
   int leuTecla = 0;
   int valores;
@@ -35,9 +34,5 @@ void cadastrarTecla()
  
 void loop()
 {
-  int valorLido;
-  while(true)
-  {
-    cadastrarTecla();
-  }
+  lerTecla();
 }
